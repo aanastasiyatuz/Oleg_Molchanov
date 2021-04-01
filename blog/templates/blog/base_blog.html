@@ -2,3 +2,18 @@
 {% block title %}Blog{% endblock %}
 {% block content %}
 {% endblock %}
+{% block admin-panel %}
+<div class="btn-group">
+  <a type="button" class="btn btn-warning dropdown-toggle create" data-bs-toggle="dropdown" aria-expanded="false">
+    Create
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="{% url 'post_create' %}">Post</a></li>
+    <li><a class="dropdown-item" href="{% url 'tag_create' %}">Tag</a></li>
+    </ul>
+</div>
+
+
+<a href="{{ admin_object.get_update_url }}" class="btn btn-warning edit" style="{% if detail %}display:block;{% endif %}">Edit</a>
+<a href="{{ admin_object.get_delete_url }}" class="btn btn-danger delete" style="{% if detail %}display:block;{% endif %}">Delete</a>
+{% endblock %}

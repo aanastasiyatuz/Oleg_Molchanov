@@ -1,5 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 
 def home_page(request):
-    return render(request, 'blog/base_blog.html')
+    return render(request, 'main.html')

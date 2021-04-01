@@ -1,0 +1,20 @@
+{% extends 'blog/base_blog.html' %}
+{% block title %}Edit Post{% endblock %}
+
+{% block content %}
+<form action="{{ post.get_update_url }}" method="post">
+    {% csrf_token %}
+
+    {% for field in form %}
+    <div class="form-label">
+        {{ field.label }}
+        {{ field }}
+        {% if field.errors %}
+        <div class="alert alert-danger mt-3">{{ field.errors }}</div>
+        {% endif %}
+    </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-warning mt-3">Update Post</button>
+    <br><br><br><br><br>
+</form>
+{% endblock %}

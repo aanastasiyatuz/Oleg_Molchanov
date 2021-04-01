@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h1>Hello</h1>
+    <h2>Welcome to my blog</h2>
+    <br>
+    <br>
+    <h6>You can read my posts <a href="{% url 'blog' %}" style="color:#ffc107">here</a></h6>
+    <h6><a href="{% url 'tags_list' %}" style="color:#ffc107">Here</a> you can see all the tags</h6>
+</div>
+
+{% endblock %}
